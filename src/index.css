@@ -1,0 +1,162 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: var(--color-phosphor);
+  background-color: var(--color-bg);
+
+  /* Brand Identity Tokens */
+  --color-phosphor: #33FF00; /* Classic terminal green */
+  --color-bg: #051405; /* Very dark green-black */
+  --color-primary: var(--color-phosphor);
+  --color-primary-glow: var(--color-phosphor);
+  --color-secondary: #FFB000;
+  --color-secondary-glow: #FFB000;
+  --color-surface: rgba(5, 20, 5, 0.85);
+  --color-text: var(--color-phosphor);
+  
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.data-fragment-text, .mono-text {
+  font-family: var(--font-mono);
+  /* Crisp text, minimal glow */
+  text-shadow: 0 0 2px rgba(51, 255, 0, 0.3);
+}
+
+/* Titles and strong elements get slightly more glow, but still clean */
+.text-hero, .text-lg {
+  text-shadow: 0 0 5px rgba(51, 255, 0, 0.4);
+}
+
+@keyframes breathingGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.breathing-glow {
+  animation: breathingGlow 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+.spin-slow-reverse {
+  animation: spin 25s linear infinite reverse;
+}
+
+.hud-panel {
+  background: #000000;
+  border: 2px solid var(--color-phosphor);
+  padding: 15px;
+  border-radius: 0;
+}
+
+.inverted-block {
+  background-color: var(--color-phosphor);
+  color: #000000 !important;
+  font-weight: bold;
+  padding: 2px 8px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.double-border {
+  border: 4px double var(--color-phosphor);
+  padding: 15px;
+  background: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Lets clicks pass through to your UI and Canvas */
+  z-index: 9999;
+  
+  /* Scanlines using repeating linear gradient (NO ROUND VIGNETTE) */
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.2) 2px,
+      rgba(0, 0, 0, 0.2) 4px
+    );
+}
+
+/* 
+  ========================================
+  TYPOGRAPHIC SCALE (ACCESSIBLE & HIERARCHICAL)
+  ========================================
+*/
+.text-hero {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.text-lg {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.text-md {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.text-sm {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.text-xs {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+canvas {
+  touch-action: none;
+}
+
+/* Barrel distortion simulation for the terminal window */
+.terminal-drawer {
+    background: rgba(5, 20, 5, 0.95) !important;
+    border-left: 2px solid var(--color-phosphor) !important;
+    box-shadow: -5px 0 30px rgba(51, 255, 0, 0.2) !important;
+    transform-style: preserve-3d;
+    transform: perspective(1200px) rotateY(-5deg);
+}
+
+.phosphor-decay {
+    animation: textDecay 0.5s ease-out forwards;
+}
+
+@keyframes textDecay {
+    0% { opacity: 1; text-shadow: 0 0 20px #33ff00, 0 0 40px #33ff00; color: #fff; }
+    100% { opacity: 0; text-shadow: 0 0 0 #33ff00; color: #33ff00; }
+}

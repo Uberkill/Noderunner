@@ -1,0 +1,128 @@
+/* Breathe animation for scanlines (Replaces aggressive flicker) */
+@keyframes flicker {
+    0% {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.12; /* Reduced jump */
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+/* The global CRT screen effect */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Lets clicks pass through to your UI and Canvas */
+  z-index: 9999;
+  
+  /* Scanlines using repeating linear gradients */
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px; /* Chunky scanlines */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .crt-overlay {
+        animation: flicker 4s infinite ease-in-out; /* Slowed down to 4s breathe */
+    }
+}
+
+/* Text Glitch Effect */
+.glitch-text {
+    position: relative;
+    color: #00f0ff;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--color-secondary);
+    clip: rect(44px, 450px, 56px, 0);
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--color-primary);
+    clip: rect(44px, 450px, 56px, 0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .glitch-text::before {
+        animation: glitch-anim 10s infinite linear alternate-reverse; /* Slower */
+    }
+    .glitch-text::after {
+        animation: glitch-anim2 12s infinite linear alternate-reverse; /* Slower */
+    }
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(11px, 9999px, 81px, 0);
+    }
+
+    20% {
+        clip: rect(86px, 9999px, 6px, 0);
+    }
+
+    40% {
+        clip: rect(27px, 9999px, 9px, 0);
+    }
+
+    60% {
+        clip: rect(81px, 9999px, 73px, 0);
+    }
+
+    80% {
+        clip: rect(22px, 9999px, 62px, 0);
+    }
+
+    100% {
+        clip: rect(69px, 9999px, 20px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(21px, 9999px, 91px, 0);
+    }
+
+    20% {
+        clip: rect(16px, 9999px, 26px, 0);
+    }
+
+    40% {
+        clip: rect(12px, 9999px, 9px, 0);
+    }
+
+    60% {
+        clip: rect(55px, 9999px, 13px, 0);
+    }
+
+    80% {
+        clip: rect(19px, 9999px, 69px, 0);
+    }
+
+    100% {
+        clip: rect(93px, 9999px, 30px, 0);
+    }
+}

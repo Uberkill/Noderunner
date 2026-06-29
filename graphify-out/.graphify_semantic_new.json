@@ -1,0 +1,1013 @@
+{
+  "nodes": [
+    {
+      "id": "3d_datacluster_datacluster",
+      "label": "DataCluster",
+      "file_type": "code",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_datapoint_datapoint",
+      "label": "DataPoint",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_scene_scene",
+      "label": "Scene",
+      "file_type": "code",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_scene_camerarig",
+      "label": "CameraRig",
+      "file_type": "code",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_screenfx_screenfx",
+      "label": "ScreenFX",
+      "file_type": "code",
+      "source_file": "src/3d/ScreenFX.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_shard_shard",
+      "label": "Shard",
+      "file_type": "code",
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_app_app",
+      "label": "App",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_app_getphosphorcolor",
+      "label": "getPhosphorColor",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_errorboundary_errorboundary",
+      "label": "ErrorBoundary",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_voicemanager_voicemanager",
+      "label": "VoiceManager",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "audio_audiomanager_audiomanager",
+      "label": "AudioManager",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_gameconfig_gameconfig",
+      "label": "GameConfig",
+      "file_type": "code",
+      "source_file": "src/core/GameConfig.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_storydata_story_data",
+      "label": "STORY_DATA",
+      "file_type": "code",
+      "source_file": "src/core/StoryData.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_storygenerator_storygenerator",
+      "label": "StoryGenerator",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_store_usegamestore",
+      "label": "useGameStore",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_store_loadstate",
+      "label": "loadState",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_store_savestate",
+      "label": "saveState",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "audio_audiomanager_algorithmic_layering",
+      "label": "Algorithmic Layering",
+      "file_type": "rationale",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "3d_scene_retro_pipeline",
+      "label": "WebGL Retro Pipeline",
+      "file_type": "rationale",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_voicemanager_ghost_effect",
+      "label": "Ghost Effect",
+      "file_type": "rationale",
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_bootscreen_bootscreen",
+      "label": "BootScreen",
+      "file_type": "code",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_overlay_overlay",
+      "label": "Overlay",
+      "file_type": "code",
+      "source_file": "src/ui/Overlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_assistant_assistant",
+      "label": "Assistant",
+      "file_type": "code",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_datadrivetracker_datadrivetracker",
+      "label": "DataDriveTracker",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_manualoverlay_manualoverlay",
+      "label": "ManualOverlay",
+      "file_type": "code",
+      "source_file": "src/ui/ManualOverlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_assistant_assistant",
+      "label": "Assistant Component",
+      "file_type": "code",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_store_usegamestore",
+      "label": "useGameStore",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_bootscreen_bootscreen",
+      "label": "BootScreen Component",
+      "file_type": "code",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_datadrivetracker_datadrivetracker",
+      "label": "DataDriveTracker Component",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_datadrivetracker_handlereadlog",
+      "label": "handleReadLog",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_storydata_story_data",
+      "label": "STORY_DATA",
+      "file_type": "code",
+      "source_file": "src/core/StoryData.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_storygenerator_storygenerator",
+      "label": "storyGenerator",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_manualoverlay_manualoverlay",
+      "label": "ManualOverlay Component",
+      "file_type": "code",
+      "source_file": "src/ui/ManualOverlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_overlay_overlay",
+      "label": "Overlay Component",
+      "file_type": "code",
+      "source_file": "src/ui/Overlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "architecture_root_layer",
+      "label": "Root Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Bridge between 3D world and 2D UI via React state and refs without triggering unnecessary UI re-renders",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "architecture_engine_layer",
+      "label": "3D Engine Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Dedicated to WebGL canvas, rendered by GPU using Three.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "architecture_ui_layer",
+      "label": "2D User Interface Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Traditional HTML/CSS layer on top of 3D canvas intercepting clicks only where visible UI elements are",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "architecture_core_managers",
+      "label": "Core Managers",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Utility classes outside React lifecycle to ensure high performance",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "contributing_domain_architecture",
+      "label": "Domain-Driven Architecture",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Strict directory structure to separate WebGL, DOM UI, audio, and core logic. Never mix 3D Canvas logic with DOM UI logic",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "contributing_state_management",
+      "label": "State Management",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Use Zustand global store, no React Context or prop-drilling. Prevent unnecessary re-renders",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "contributing_performance",
+      "label": "Performance & Memory Management",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Avoid memory leaks. Dispose Geometry/Material, use declarative R3F. Track audio nodes. Pre-allocate vectors outside useFrame",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_instructions_global_state",
+      "label": "Global State via Zustand",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "No prop-drilling or React Context. No local useState across WebGL/DOM boundary. Use src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_instructions_webgl_dom_boundary",
+      "label": "The WebGL / DOM Boundary",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "Communicate via zustand. Do not mount DOM elements deeply within 3D scene",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agent_instructions_memory_strictness",
+      "label": "Performance & Memory Strictness",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "Avoid imperative new THREE inside render loops. Garbage collect audio. Pre-allocate vectors outside useFrame loop",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_audio_resonance",
+      "label": "Audio Resonance Engine",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "rationale": "Bespoke Web Audio API synthesizer layering algorithmic dissonance and harmony based on depth",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "workflows_deploy_deploy",
+      "label": "Pages Deployment Workflow",
+      "file_type": "concept",
+      "source_file": ".github/workflows/deploy.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "3d_datacluster_datacluster",
+      "target": "audio_audiomanager_audiomanager",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_datacluster_datacluster",
+      "target": "core_store_usegamestore",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_datacluster_datacluster",
+      "target": "3d_datapoint_datapoint",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_datapoint_datapoint",
+      "target": "core_gameconfig_gameconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_datapoint_datapoint",
+      "target": "3d_datacluster_datacluster",
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_scene",
+      "target": "core_storygenerator_storygenerator",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_scene",
+      "target": "audio_audiomanager_audiomanager",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_scene",
+      "target": "core_store_usegamestore",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_scene",
+      "target": "3d_datacluster_datacluster",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_scene",
+      "target": "3d_scene_camerarig",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "3d_scene_scene",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "audio_audiomanager_audiomanager",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "3d_screenfx_screenfx",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "ui_bootscreen_bootscreen",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "ui_overlay_overlay",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "ui_assistant_assistant",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "ui_datadrivetracker_datadrivetracker",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "ui_manualoverlay_manualoverlay",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "core_store_usegamestore",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_app_getphosphorcolor",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "audio_audiomanager_audiomanager",
+      "target": "core_gameconfig_gameconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_gameconfig_gameconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_storydata_story_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "core_store_usegamestore",
+      "target": "core_store_loadstate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "core_store_usegamestore",
+      "target": "core_store_savestate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_voicemanager_voicemanager",
+      "target": "audio_audiomanager_audiomanager",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_shard_shard",
+      "target": "3d_datapoint_datapoint",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "audio_audiomanager_algorithmic_layering",
+      "target": "audio_audiomanager_audiomanager",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "3d_scene_retro_pipeline",
+      "target": "3d_scene_scene",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_voicemanager_ghost_effect",
+      "target": "src_voicemanager_voicemanager",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ui_assistant_assistant",
+      "target": "core_store_usegamestore",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "core_store_usegamestore",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "core_storydata_story_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ui_datadrivetracker_handlereadlog",
+      "target": "core_storygenerator_storygenerator",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "ui_datadrivetracker_handlereadlog",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_domain_architecture",
+      "target": "architecture_engine_layer",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_domain_architecture",
+      "target": "architecture_ui_layer",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_state_management",
+      "target": "agent_instructions_global_state",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_domain_architecture",
+      "target": "agent_instructions_webgl_dom_boundary",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_performance",
+      "target": "agent_instructions_memory_strictness",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "agent_instructions_global_state",
+      "target": "core_store_usegamestore",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".agent-instructions.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_state_management",
+      "target": "core_store_usegamestore",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "state_persistence_system",
+      "label": "State Persistence System",
+      "nodes": [
+        "core_store_usegamestore",
+        "core_store_loadstate",
+        "core_store_savestate"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js"
+    },
+    {
+      "id": "audio_voice_subsystem",
+      "label": "Audio & Voice Subsystem",
+      "nodes": [
+        "audio_audiomanager_audiomanager",
+        "src_voicemanager_voicemanager"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/audio/AudioManager.js"
+    },
+    {
+      "id": "story_generation_engine",
+      "label": "Story Generation Engine",
+      "nodes": [
+        "core_storygenerator_storygenerator",
+        "core_storydata_story_data",
+        "core_gameconfig_gameconfig"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js"
+    },
+    {
+      "id": "architecture_layers",
+      "label": "Radial Stream Architecture Layers",
+      "nodes": [
+        "architecture_root_layer",
+        "architecture_engine_layer",
+        "architecture_ui_layer",
+        "architecture_core_managers"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md"
+    },
+    {
+      "id": "strict_separation_rules",
+      "label": "Strict Domain Separation Rules",
+      "nodes": [
+        "contributing_domain_architecture",
+        "agent_instructions_webgl_dom_boundary",
+        "architecture_engine_layer",
+        "architecture_ui_layer"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

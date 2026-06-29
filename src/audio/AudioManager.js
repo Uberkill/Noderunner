@@ -1,4 +1,4 @@
-import { GameConfig } from './GameConfig';
+import { GameConfig } from '../core/GameConfig';
 
 class AudioManager {
     constructor() {
@@ -7,6 +7,8 @@ class AudioManager {
         this.proximityGain = null;
         this.depthLayers = {};
         this.isInitialized = false;
+        this.activeDepthNodes = [];
+        this.currentDepth = null;
     }
 
     reset() {
@@ -16,6 +18,8 @@ class AudioManager {
         }
         this.depthLayers = {};
         this.isInitialized = false;
+        this.activeDepthNodes = [];
+        this.currentDepth = null;
         this.masterGain = null;
         this.proximityGain = null;
     }
@@ -53,22 +57,44 @@ class AudioManager {
 
         // 1. Base Layer (Depth 1) - Deep drone instead of irritating hum
         // Lower frequencies and drastically reduced volume
-        this.createPad(GameConfig.AUDIO.BASE_FREQUENCY, 'sine', 0.05); 
-        this.createPad(GameConfig.AUDIO.BASE_FREQUENCY * 1.5, 'sine', 0.02); 
+        this.createPad(GameConfig.AUDIO.BASE_FREQUENCY, 'sine', 0.05, true); 
+        this.createPad(GameConfig.AUDIO.BASE_FREQUENCY * 1.5, 'sine', 0.02, true); 
 
         // 2. Proximity Layer - Softer tone
         this.proximityGain = this.ctx.createGain();
         this.proximityGain.gain.value = 0;
         this.proximityGain.connect(this.masterGain);
-        this.createLayer(this.proximityGain, GameConfig.AUDIO.BASE_FREQUENCY * 3, 'sine', 0.02); 
-        this.createLayer(this.proximityGain, GameConfig.AUDIO.BASE_FREQUENCY * 3.75, 'sine', 0.02);
+        this.createLayer(this.proximityGain, GameConfig.AUDIO.BASE_FREQUENCY * 3, 'sine', 0.02, true); 
+        this.createLayer(this.proximityGain, GameConfig.AUDIO.BASE_FREQUENCY * 3.75, 'sine', 0.02, true);
 
         this.isInitialized = true;
+    }
+
+    clearDepthNodes() {
+        if (!this.ctx) return;
+        this.activeDepthNodes.forEach(({osc, gain, lfo, panner}) => {
+            try {
+                gain.gain.cancelScheduledValues(this.ctx.currentTime);
+                gain.gain.setValueAtTime(gain.gain.value, this.ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 2);
+                osc.stop(this.ctx.currentTime + 2.1);
+                if (lfo) {
+                    lfo.stop(this.ctx.currentTime + 2.1);
+                    lfo.disconnect();
+                }
+                if (panner) panner.disconnect();
+            } catch (e) {
+                // Ignore already stopped nodes
+            }
+        });
+        this.activeDepthNodes = [];
     }
 
     setVolume(level) {
         if (this.masterGain) {
             // Smoothly transition volume
+            this.masterGain.gain.cancelScheduledValues(this.ctx.currentTime);
+            this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, this.ctx.currentTime);
             this.masterGain.gain.linearRampToValueAtTime(level, this.ctx.currentTime + 0.1);
         }
     }
@@ -76,25 +102,22 @@ class AudioManager {
     updateDepth(depth) {
         if (!this.ctx || !this.isInitialized) return;
 
-        if (!this.depthLayers[depth]) {
-            this.depthLayers[depth] = true;
+        if (this.currentDepth !== depth) {
+            this.currentDepth = depth;
+            this.clearDepthNodes(); // Prevent stacking infinite oscillators
             
             // Algorithmic layering for infinite depths
-            // As depth increases, we add lower sub-bass and higher dissonant frequencies
             const base = GameConfig.AUDIO.BASE_FREQUENCY;
             
             if (depth === 2) {
-                this.createPad(base / 2, 'sawtooth', 0.04); // Sub Bass
+                this.createPad(base / 2, 'sawtooth', 0.04); 
             } else if (depth === 3) {
-                this.createPad(base * 2.25, 'sine', 0.05); // Resonance
+                this.createPad(base * 2.25, 'sine', 0.05); 
             } else if (depth === 4) {
-                this.createLayer(this.masterGain, base * 16, 'triangle', 0.02); // Void Shimmer
+                this.createLayer(this.masterGain, base * 16, 'triangle', 0.02); 
             } else if (depth >= GameConfig.SCALING.WIN_DEPTH) {
-                // Beyond win depth, add dissonant layers
-                // Use prime multipliers to ensure dissonance
                 const primes = [3.89, 4.11, 5.03, 6.17, 7.39, 8.53, 9.71];
                 const multiplier = primes[depth % primes.length];
-                
                 this.createPad(base * multiplier, 'sine', 0.05);
             }
         }
@@ -102,13 +125,11 @@ class AudioManager {
 
     updateProximity(value) {
         if (this.proximityGain) {
-            // Directly setting the value prevents scheduling thousands of audio events per second
-            // which causes Web Audio Context freezing on some browsers.
-            this.proximityGain.gain.value = value * 0.4;
+            this.proximityGain.gain.setTargetAtTime(value * 0.4, this.ctx.currentTime, 0.1);
         }
     }
 
-    createPad(freq, type, vol) {
+    createPad(freq, type, vol, isBaseLayer = false) {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
         osc.type = type;
@@ -132,9 +153,12 @@ class AudioManager {
         };
         
         osc.start();
+        if (!isBaseLayer) {
+            this.activeDepthNodes.push({ osc, gain });
+        }
     }
 
-    createLayer(destinationNode, freq, type, vol) {
+    createLayer(destinationNode, freq, type, vol, isBaseLayer = false) {
         const osc = this.ctx.createOscillator();
         osc.type = type;
         osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
@@ -160,6 +184,19 @@ class AudioManager {
         };
 
         osc.start();
+        if (!isBaseLayer) {
+            this.activeDepthNodes.push({ 
+                osc, 
+                lfo,
+                panner,
+                gain: { gain: { 
+                    cancelScheduledValues: () => {}, 
+                    setValueAtTime: () => {}, 
+                    linearRampToValueAtTime: () => {},
+                    value: 0
+                } } 
+            }); // Mock gain for simple clear 
+        }
     }
 
     // --- INTERACTION ---
@@ -191,6 +228,15 @@ class AudioManager {
     playDataClick(index, isKey) {
         if (!this.ctx) return;
 
+        if (isKey) {
+            // Success: F Major Upward Sweep
+            this.playNote(523.25, 0); // C5
+            this.playNote(698.46, 0.1); // F5
+            this.playNote(880.00, 0.2); // A5
+            this.playNote(1046.50, 0.4); // C6
+            return;
+        }
+
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
 
@@ -199,15 +245,8 @@ class AudioManager {
         const panner = this.ctx.createStereoPanner();
         panner.pan.value = (Math.random() * 2) - 1;
 
-        if (isKey) {
-            // Success: F Major Upward Sweep
-            this.playNote(523.25, 0); // C5
-            this.playNote(698.46, 0.1); // F5
-            this.playNote(880.00, 0.2); // A5
-            this.playNote(1046.50, 0.4); // C6
-        } else {
-            // Standard Hover: Pentatonic Pluck
-            const freq = this.getPentatonicNote(index);
+        // Standard Hover: Pentatonic Pluck
+        const freq = this.getPentatonicNote(index);
 
             osc.type = 'triangle'; // Softer than sine, richer
             osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
@@ -229,7 +268,6 @@ class AudioManager {
 
             osc.start();
             osc.stop(this.ctx.currentTime + 0.4);
-        }
     }
 
     playNote(freq, delay) {

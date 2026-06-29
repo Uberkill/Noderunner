@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useGameStore } from '../core/store';
 
 const ASCII_FACE = `
  +-----+
@@ -6,7 +7,8 @@ const ASCII_FACE = `
  +-----+
 `;
 
-export default React.memo(function Assistant({ depth, activeData, lastHint }) {
+export default function Assistant() {
+    const { depth, activeData, lastHint } = useGameStore();
     const [text, setText] = useState("");
     const [displayedText, setDisplayedText] = useState("");
 
@@ -28,7 +30,7 @@ export default React.memo(function Assistant({ depth, activeData, lastHint }) {
         } else {
             switch(depth) {
                 case 1:
-                    newText = "SYS_BOOT SUCCESS. I am ROKO. Move cursor to sweep the void. We must repair the data grid.";
+                    newText = "SYS_BOOT SUCCESS. I am ROKO. Click adjacent nodes to build a continuous path from the origin. Avoid red corruption.";
                     break;
                 case 2:
                     newText = "LAYER 2 REACHED. The corruption here is denser. It wasn't an accident. They tried to burn this.";
@@ -86,4 +88,4 @@ export default React.memo(function Assistant({ depth, activeData, lastHint }) {
             </div>
         </div>
     );
-});
+}

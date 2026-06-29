@@ -2,8 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import * as THREE from 'three';
-import { audioManager } from './AudioManager';
-import { GameConfig } from './GameConfig';
+import { GameConfig } from '../core/GameConfig';
 
 const _pointOnRay = new THREE.Vector3();
 const _localTarget = new THREE.Vector3();
@@ -14,8 +13,14 @@ export default React.memo(function DataPoint({ index, sharedPositions, position,
     const localRef = useRef();
     const meshRef = localRef;
     const torusRef = useRef();
-    // Internal state for hover
     const [hovered, setHover] = useState(false);
+
+    // Cleanup stuck cursor on unmount
+    React.useEffect(() => {
+        return () => {
+            document.body.style.cursor = 'default';
+        };
+    }, []);
 
     // Physics State
     const initialPos = useRef(new THREE.Vector3(...position));
@@ -59,8 +64,15 @@ export default React.memo(function DataPoint({ index, sharedPositions, position,
         // Convert World Target to Local Coordinate (relative to Group's position)
         _localTarget.copy(targetPos.current).sub(initialPos.current);
 
+        if (data.type === 'hazard') {
+            // Jitter for hazards
+            _localTarget.x += (Math.random() - 0.5) * 0.2;
+            _localTarget.y += (Math.random() - 0.5) * 0.2;
+            _localTarget.z += (Math.random() - 0.5) * 0.2;
+        }
+
         // Move current position towards target position (Soft Spring)
-        mesh.position.lerp(_localTarget, GameConfig.PHYSICS.SPRING_SPEED);
+        mesh.position.lerp(_localTarget, data.type === 'hazard' ? 0.3 : GameConfig.PHYSICS.SPRING_SPEED);
 
         // --- 3. VISUALS ---
         
@@ -106,12 +118,14 @@ export default React.memo(function DataPoint({ index, sharedPositions, position,
                 mesh.material.emissiveIntensity = 2.0; // Solid drawn path
                 mesh.material.opacity = 1.0;
             } else if (canConnect) {
-                // Pulsing
-                mesh.material.emissiveIntensity = 0.5 + Math.sin(Date.now() * 0.005) * 0.3;
+                // Pulsing - brighter to attract clicks
+                mesh.material.emissiveIntensity = 1.0 + Math.sin(Date.now() * 0.005) * 0.5;
+                mesh.material.opacity = 0.8;
+                mesh.material.transparent = true;
             } else {
-                // Blueprint state (Out of reach)
-                mesh.material.emissiveIntensity = 0.1; 
-                mesh.material.opacity = 0.3;
+                // Blueprint state (Out of reach) - much dimmer to reduce visual noise
+                mesh.material.emissiveIntensity = 0.05; 
+                mesh.material.opacity = 0.1;
                 mesh.material.transparent = true;
             }
 
@@ -162,6 +176,8 @@ export default React.memo(function DataPoint({ index, sharedPositions, position,
                 position={[0, 0, 0]} // Starts at local center
                 onPointerDown={(e) => {
                     e.stopPropagation();
+                    // Prevent double-penalty for hazards if already caught by magnetism
+                    if (data.type === 'hazard' && isMagnetized.current) return;
                     if (canConnect || isCaptured) {
                         onClick(data, canConnect);
                     }
@@ -204,7 +220,7 @@ export default React.memo(function DataPoint({ index, sharedPositions, position,
                         pointerEvents: 'none',
                         whiteSpace: 'nowrap'
                     }}>
-                        {data.id} // {data.title}
+                        {data.id} {"//"} {data.title}
                     </div>
                 </Html>
             )}

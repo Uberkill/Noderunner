@@ -31,7 +31,7 @@ export class StoryGenerator {
 
         // 3. Find Key Node (Furthest from Start)
         let endIdx = 0;
-        let maxDist = 0;
+        let maxDist = -1;
         for (let i = 0; i < nodeCount; i++) {
             if (i === startIdx) continue;
             const d = distSq(rawPositions[startIdx], rawPositions[i]);
@@ -50,8 +50,12 @@ export class StoryGenerator {
         const loreIndices = new Set();
         const loreAssignment = {}; // Map node index -> fragment index
         
-        // Ensure we don't try to place more fragments than available nodes
-        const numLoreNodes = Math.min(5, availableIndices.length); 
+        // Safely fetch stage data (fallback to stage 5 if beyond)
+        const stageDepth = Math.min(depth, 5);
+        const stageLore = STORY_DATA[stageDepth] || STORY_DATA[5];
+
+        // Ensure we don't try to place more fragments than available nodes or lore fragments
+        const numLoreNodes = Math.min(5, availableIndices.length, stageLore.fragments?.length || 0); 
         
         for (let f = 0; f < numLoreNodes; f++) {
             const rIdx = Math.floor(Math.random() * availableIndices.length);
@@ -59,10 +63,6 @@ export class StoryGenerator {
             loreIndices.add(nodeIndex);
             loreAssignment[nodeIndex] = f; // 0 to 4
         }
-
-        // Safely fetch stage data (fallback to stage 5 if beyond)
-        const stageDepth = Math.min(depth, 5);
-        const stageLore = STORY_DATA[stageDepth] || STORY_DATA[5];
 
         // 5. Build Nodes Array
         const nodes = [];

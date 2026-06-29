@@ -1,0 +1,137 @@
+{
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\package.json": {
+    "mtime": 1782756780.907545,
+    "ast_hash": "e2c896838595851f4156f7fc850587c2",
+    "semantic_hash": "e2c896838595851f4156f7fc850587c2"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\3d\\DataCluster.jsx": {
+    "mtime": 1782756945.5946383,
+    "ast_hash": "8b5456ee158d91a980755ecccfaca807",
+    "semantic_hash": "8b5456ee158d91a980755ecccfaca807"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\3d\\DataPoint.jsx": {
+    "mtime": 1782757008.6022167,
+    "ast_hash": "45002a51ac24eda1410cf1633adadf8c",
+    "semantic_hash": "45002a51ac24eda1410cf1633adadf8c"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\3d\\Scene.jsx": {
+    "mtime": 1782756925.5874372,
+    "ast_hash": "a53c37e7fa64b0e7d0f67b5cd52b365c",
+    "semantic_hash": "a53c37e7fa64b0e7d0f67b5cd52b365c"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\3d\\ScreenFX.jsx": {
+    "mtime": 1782470224.6680982,
+    "ast_hash": "dd4f58f4292ae73b79d8835735282ead",
+    "semantic_hash": "dd4f58f4292ae73b79d8835735282ead"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\3d\\Shard.jsx": {
+    "mtime": 1768933678.21297,
+    "ast_hash": "2caabe404f2c22e885e04ec101ce737e",
+    "semantic_hash": "2caabe404f2c22e885e04ec101ce737e"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\App.jsx": {
+    "mtime": 1782756897.9564543,
+    "ast_hash": "bcacb4325a1fda4a2ebd84e6933ef6ae",
+    "semantic_hash": "bcacb4325a1fda4a2ebd84e6933ef6ae"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ErrorBoundary.jsx": {
+    "mtime": 1768934314.7942038,
+    "ast_hash": "5db2d3015226b2b4a6a9539a794adcd0",
+    "semantic_hash": "5db2d3015226b2b4a6a9539a794adcd0"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\VoiceManager.js": {
+    "mtime": 1768935230.382143,
+    "ast_hash": "c0f4155e5bbfbde829b58ee89685d4d3",
+    "semantic_hash": "c0f4155e5bbfbde829b58ee89685d4d3"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\audio\\AudioManager.js": {
+    "mtime": 1782756984.206848,
+    "ast_hash": "9ad851b24a33a88d82dda4b213e97364",
+    "semantic_hash": "9ad851b24a33a88d82dda4b213e97364"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\core\\GameConfig.js": {
+    "mtime": 1782456951.9731357,
+    "ast_hash": "7acddaff6dcd52485311c3d5a3142841",
+    "semantic_hash": "7acddaff6dcd52485311c3d5a3142841"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\core\\StoryData.js": {
+    "mtime": 1782463400.9087155,
+    "ast_hash": "5f329558db44f63c62f0bf2e4159dec4",
+    "semantic_hash": "5f329558db44f63c62f0bf2e4159dec4"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\core\\StoryGenerator.js": {
+    "mtime": 1782463429.1717894,
+    "ast_hash": "103ee96ecd3c8617a1ebd26302f8ab62",
+    "semantic_hash": "103ee96ecd3c8617a1ebd26302f8ab62"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\core\\store.js": {
+    "mtime": 1782756795.9614778,
+    "ast_hash": "1c716fd6b5108f686c652f927f7d01f9",
+    "semantic_hash": "1c716fd6b5108f686c652f927f7d01f9"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\main.jsx": {
+    "mtime": 1782473564.1640203,
+    "ast_hash": "39ae8020054f353e3c1379d1c6597f27",
+    "semantic_hash": "39ae8020054f353e3c1379d1c6597f27"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ui\\Assistant.jsx": {
+    "mtime": 1782756960.8707094,
+    "ast_hash": "14fa82813954441c0fed0a26ed779aaa",
+    "semantic_hash": "14fa82813954441c0fed0a26ed779aaa"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ui\\BootScreen.jsx": {
+    "mtime": 1782473394.9002583,
+    "ast_hash": "a49bd1169dff89e39e15aa3ecdf9e272",
+    "semantic_hash": "a49bd1169dff89e39e15aa3ecdf9e272"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ui\\DataDriveTracker.jsx": {
+    "mtime": 1782757031.3265393,
+    "ast_hash": "19387c0cf3edce1b48a362c5e45b2c54",
+    "semantic_hash": "19387c0cf3edce1b48a362c5e45b2c54"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ui\\ManualOverlay.jsx": {
+    "mtime": 1782473065.2037385,
+    "ast_hash": "445597a5eef6bae6e332be9b2844fcbe",
+    "semantic_hash": "445597a5eef6bae6e332be9b2844fcbe"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\src\\ui\\Overlay.jsx": {
+    "mtime": 1782472919.331139,
+    "ast_hash": "b138a6aba6ac83ebdc109bea9442229d",
+    "semantic_hash": "b138a6aba6ac83ebdc109bea9442229d"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\vite.config.js": {
+    "mtime": 1782473648.492359,
+    "ast_hash": "9058fd27b8f49f3ce567422a042cf857",
+    "semantic_hash": "9058fd27b8f49f3ce567422a042cf857"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\.agent-instructions.md": {
+    "mtime": 1782757126.376242,
+    "ast_hash": "0c7523821291985445b90d7281d0c9a8",
+    "semantic_hash": "0c7523821291985445b90d7281d0c9a8"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\.github\\workflows\\deploy.yml": {
+    "mtime": 1782477391.3393228,
+    "ast_hash": "36d1902433dcc67b4d58588fd1124778",
+    "semantic_hash": "36d1902433dcc67b4d58588fd1124778"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\ARCHITECTURE.md": {
+    "mtime": 1782756249.6426196,
+    "ast_hash": "72a9de6ee17f0642077f2e2b25babd13",
+    "semantic_hash": "72a9de6ee17f0642077f2e2b25babd13"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\CONTRIBUTING.md": {
+    "mtime": 1782757126.2986643,
+    "ast_hash": "74d6be30ae9dca404449701fd97e3371",
+    "semantic_hash": "74d6be30ae9dca404449701fd97e3371"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\README.md": {
+    "mtime": 1782757126.2886672,
+    "ast_hash": "aa275a7ea16caaa6e8d1c8cdeda39d82",
+    "semantic_hash": "aa275a7ea16caaa6e8d1c8cdeda39d82"
+  },
+  "C:\\Users\\oob\\.gemini\\antigravity\\scratch\\radial-stream\\index.html": {
+    "mtime": 1782451023.8224618,
+    "ast_hash": "cec4e6df513254d21ff36d8f45bb5366",
+    "semantic_hash": "cec4e6df513254d21ff36d8f45bb5366"
+  }
+}

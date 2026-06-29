@@ -5,8 +5,9 @@ import { GlitchMode } from 'postprocessing';
 import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import DataCluster from './DataCluster';
-import { storyGenerator } from './StoryGenerator';
-import { audioManager } from './AudioManager';
+import { storyGenerator } from '../core/StoryGenerator';
+import { audioManager } from '../audio/AudioManager';
+import { useGameStore } from '../core/store';
 
 
 
@@ -25,7 +26,8 @@ function CameraRig({ isWarping, targetPosRef, controlsRef }) {
     return null;
 }
 
-export default React.memo(function Scene({ onSelect, depth, phosphorColor, onComboEvent, onProgressUpdate }) {
+export default React.memo(function Scene({ onSelect, phosphorColor }) {
+    const { depth } = useGameStore();
     const [sector, setSector] = useState(null);
     const [isWarping, setIsWarping] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
@@ -36,7 +38,7 @@ export default React.memo(function Scene({ onSelect, depth, phosphorColor, onCom
         if (depth > 0) { // Init or Warp
             setIsWarping(true);
             setIsTransitioning(false);
-            setTimeout(() => {
+            const timerId = setTimeout(() => {
                 const newSector = storyGenerator.generateSector(depth);
                 setSector(newSector);
                 
@@ -47,18 +49,20 @@ export default React.memo(function Scene({ onSelect, depth, phosphorColor, onCom
 
                 setIsWarping(false);
             }, 2000);
+            
+            return () => clearTimeout(timerId);
         }
     }, [depth]);
 
-    const handleHover = (data) => {
+    const handleHover = React.useCallback((data) => {
         if (!sector) return;
 
         // Audio handled here on hover now
         const isKey = (data.id === sector.keyNodeId);
         audioManager.playDataClick(data.index, isKey);
-    };
+    }, [sector]);
 
-    const handleSelect = (data) => {
+    const handleSelect = React.useCallback((data) => {
         if (!sector) return;
 
         audioManager.initialize();
@@ -76,9 +80,7 @@ export default React.memo(function Scene({ onSelect, depth, phosphorColor, onCom
 
         // Open the overlay for ANY node clicked so the user can read lore
         onSelect(data);
-    };
-
-    const keyNode = sector?.nodes.find(n => n.id === sector.keyNodeId);
+    }, [sector, isTransitioning, onSelect]);
 
     return (
         <Canvas 
@@ -96,7 +98,7 @@ export default React.memo(function Scene({ onSelect, depth, phosphorColor, onCom
 
             <group visible={!isWarping}>
                 {/* 3D Content goes here */}
-                {sector && <DataCluster key={sector.id} sectorData={sector} phosphorColor={phosphorColor} onSelect={handleSelect} onHover={handleHover} onComboEvent={onComboEvent} onProgressUpdate={onProgressUpdate} />}
+                {sector && <DataCluster key={sector.id} sectorData={sector} phosphorColor={phosphorColor} onSelect={handleSelect} onHover={handleHover} />}
             </group>
 
             <CameraRig isWarping={isWarping} targetPosRef={targetPosRef} controlsRef={controlsRef} />

@@ -1,0 +1,3033 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "state_persistence_system",
+        "label": "State Persistence System",
+        "nodes": [
+          "core_store_usegamestore",
+          "core_store_loadstate",
+          "core_store_savestate"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "src/core/store.js"
+      },
+      {
+        "id": "audio_voice_subsystem",
+        "label": "Audio & Voice Subsystem",
+        "nodes": [
+          "audio_audiomanager_audiomanager",
+          "src_voicemanager_voicemanager"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "src/audio/AudioManager.js"
+      },
+      {
+        "id": "story_generation_engine",
+        "label": "Story Generation Engine",
+        "nodes": [
+          "core_storygenerator_storygenerator",
+          "core_storydata_story_data",
+          "core_gameconfig_gameconfig"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "src/core/StoryGenerator.js"
+      },
+      {
+        "id": "architecture_layers",
+        "label": "Radial Stream Architecture Layers",
+        "nodes": [
+          "architecture_root_layer",
+          "architecture_engine_layer",
+          "architecture_ui_layer",
+          "architecture_core_managers"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "ARCHITECTURE.md"
+      },
+      {
+        "id": "strict_separation_rules",
+        "label": "Strict Domain Separation Rules",
+        "nodes": [
+          "contributing_domain_architecture",
+          "agent_instructions_webgl_dom_boundary",
+          "architecture_engine_layer",
+          "architecture_ui_layer"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "CONTRIBUTING.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package",
+      "community": 2,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "package_name",
+      "community": 2,
+      "norm_label": "name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "package_private",
+      "community": 2,
+      "norm_label": "private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "package_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "package_type",
+      "community": 2,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "package_scripts",
+      "community": 2,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "package_scripts_dev",
+      "community": 2,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "package_scripts_build",
+      "community": 2,
+      "norm_label": "build"
+    },
+    {
+      "label": "predeploy",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "package_scripts_predeploy",
+      "community": 2,
+      "norm_label": "predeploy"
+    },
+    {
+      "label": "deploy",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "id": "package_scripts_deploy",
+      "community": 2,
+      "norm_label": "deploy"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "package_scripts_lint",
+      "community": 2,
+      "norm_label": "lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "package_scripts_preview",
+      "community": 2,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "package_dependencies",
+      "community": 3,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@react-three/drei",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "package_dependencies_react_three_drei",
+      "community": 3,
+      "norm_label": "@react-three/drei"
+    },
+    {
+      "label": "@react-three/fiber",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "package_dependencies_react_three_fiber",
+      "community": 3,
+      "norm_label": "@react-three/fiber"
+    },
+    {
+      "label": "@react-three/postprocessing",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "id": "package_dependencies_react_three_postprocessing",
+      "community": 3,
+      "norm_label": "@react-three/postprocessing"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "package_dependencies_framer_motion",
+      "community": 3,
+      "norm_label": "framer-motion"
+    },
+    {
+      "label": "postprocessing",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "package_dependencies_postprocessing",
+      "community": 3,
+      "norm_label": "postprocessing"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "package_dependencies_react",
+      "community": 3,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "package_dependencies_react_dom",
+      "community": 3,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "package_dependencies_three",
+      "community": 3,
+      "norm_label": "three"
+    },
+    {
+      "label": "uuid",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "id": "package_dependencies_uuid",
+      "community": 3,
+      "norm_label": "uuid"
+    },
+    {
+      "label": "zustand",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "id": "package_dependencies_zustand",
+      "community": 3,
+      "norm_label": "zustand"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "id": "package_devdependencies",
+      "community": 5,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "id": "package_devdependencies_types_react",
+      "community": 5,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "id": "package_devdependencies_types_react_dom",
+      "community": 5,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "id": "package_devdependencies_vitejs_plugin_react",
+      "community": 5,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "id": "package_devdependencies_eslint",
+      "community": 5,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "id": "package_devdependencies_eslint_plugin_react",
+      "community": 5,
+      "norm_label": "eslint-plugin-react"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "id": "package_devdependencies_eslint_plugin_react_hooks",
+      "community": 5,
+      "norm_label": "eslint-plugin-react-hooks"
+    },
+    {
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "id": "package_devdependencies_eslint_plugin_react_refresh",
+      "community": 5,
+      "norm_label": "eslint-plugin-react-refresh"
+    },
+    {
+      "label": "gh-pages",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "id": "package_devdependencies_gh_pages",
+      "community": 5,
+      "norm_label": "gh-pages"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "id": "package_devdependencies_vite",
+      "community": 5,
+      "norm_label": "vite"
+    },
+    {
+      "label": "DataCluster.jsx",
+      "file_type": "code",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L1",
+      "id": "3d_datacluster",
+      "community": 4,
+      "norm_label": "datacluster.jsx"
+    },
+    {
+      "label": "DataPoint.jsx",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L1",
+      "id": "3d_datapoint",
+      "community": 7,
+      "norm_label": "datapoint.jsx"
+    },
+    {
+      "label": "_pointOnRay",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L8",
+      "id": "3d_datapoint_pointonray",
+      "community": 7,
+      "norm_label": "_pointonray"
+    },
+    {
+      "label": "_localTarget",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L9",
+      "id": "3d_datapoint_localtarget",
+      "community": 7,
+      "norm_label": "_localtarget"
+    },
+    {
+      "label": "_targetScaleVec",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L10",
+      "id": "3d_datapoint_targetscalevec",
+      "community": 7,
+      "norm_label": "_targetscalevec"
+    },
+    {
+      "label": "_worldPos",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L11",
+      "id": "3d_datapoint_worldpos",
+      "community": 7,
+      "norm_label": "_worldpos"
+    },
+    {
+      "label": "Scene.jsx",
+      "file_type": "code",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L1",
+      "id": "3d_scene",
+      "community": 4,
+      "norm_label": "scene.jsx"
+    },
+    {
+      "label": "CameraRig()",
+      "file_type": "code",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L14",
+      "id": "3d_scene_camerarig",
+      "community": 8,
+      "norm_label": "camerarig()"
+    },
+    {
+      "label": "ScreenFX.jsx",
+      "file_type": "code",
+      "source_file": "src/3d/ScreenFX.jsx",
+      "source_location": "L1",
+      "id": "3d_screenfx",
+      "community": 1,
+      "norm_label": "screenfx.jsx"
+    },
+    {
+      "label": "Shard.jsx",
+      "file_type": "code",
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": "L1",
+      "id": "3d_shard",
+      "community": 8,
+      "norm_label": "shard.jsx"
+    },
+    {
+      "label": "Shard()",
+      "file_type": "code",
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": "L5",
+      "id": "3d_shard_shard",
+      "community": 8,
+      "norm_label": "shard()"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "id": "src_app",
+      "community": 1,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "id": "src_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "getPhosphorColor()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L182",
+      "id": "src_app_getphosphorcolor",
+      "community": 1,
+      "norm_label": "getphosphorcolor()"
+    },
+    {
+      "label": "ErrorBoundary.jsx",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L1",
+      "id": "src_errorboundary",
+      "community": 9,
+      "norm_label": "errorboundary.jsx"
+    },
+    {
+      "label": "ErrorBoundary",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L3",
+      "id": "src_errorboundary_errorboundary",
+      "community": 9,
+      "norm_label": "errorboundary"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L4",
+      "id": "src_errorboundary_errorboundary_constructor",
+      "community": 9,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".getDerivedStateFromError()",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L9",
+      "id": "src_errorboundary_errorboundary_getderivedstatefromerror",
+      "community": 9,
+      "norm_label": ".getderivedstatefromerror()"
+    },
+    {
+      "label": ".componentDidCatch()",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L13",
+      "id": "src_errorboundary_errorboundary_componentdidcatch",
+      "community": 9,
+      "norm_label": ".componentdidcatch()"
+    },
+    {
+      "label": ".render()",
+      "file_type": "code",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L18",
+      "id": "src_errorboundary_errorboundary_render",
+      "community": 9,
+      "norm_label": ".render()"
+    },
+    {
+      "label": "VoiceManager.js",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L1",
+      "id": "src_voicemanager",
+      "community": 10,
+      "norm_label": "voicemanager.js"
+    },
+    {
+      "label": "VoiceManager",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L1",
+      "id": "src_voicemanager_voicemanager",
+      "community": 10,
+      "norm_label": "voicemanager"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L2",
+      "id": "src_voicemanager_voicemanager_constructor",
+      "community": 10,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".speak()",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L8",
+      "id": "src_voicemanager_voicemanager_speak",
+      "community": 10,
+      "norm_label": ".speak()"
+    },
+    {
+      "label": ".stop()",
+      "file_type": "code",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L43",
+      "id": "src_voicemanager_voicemanager_stop",
+      "community": 10,
+      "norm_label": ".stop()"
+    },
+    {
+      "label": "AudioManager.js",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L1",
+      "id": "audio_audiomanager",
+      "community": 7,
+      "norm_label": "audiomanager.js"
+    },
+    {
+      "label": "AudioManager",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L3",
+      "id": "audio_audiomanager_audiomanager",
+      "community": 0,
+      "norm_label": "audiomanager"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L4",
+      "id": "audio_audiomanager_audiomanager_constructor",
+      "community": 0,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".reset()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L14",
+      "id": "audio_audiomanager_audiomanager_reset",
+      "community": 0,
+      "norm_label": ".reset()"
+    },
+    {
+      "label": ".initialize()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L27",
+      "id": "audio_audiomanager_audiomanager_initialize",
+      "community": 0,
+      "norm_label": ".initialize()"
+    },
+    {
+      "label": ".clearDepthNodes()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L73",
+      "id": "audio_audiomanager_audiomanager_cleardepthnodes",
+      "community": 0,
+      "norm_label": ".cleardepthnodes()"
+    },
+    {
+      "label": ".setVolume()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L86",
+      "id": "audio_audiomanager_audiomanager_setvolume",
+      "community": 0,
+      "norm_label": ".setvolume()"
+    },
+    {
+      "label": ".updateDepth()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L93",
+      "id": "audio_audiomanager_audiomanager_updatedepth",
+      "community": 0,
+      "norm_label": ".updatedepth()"
+    },
+    {
+      "label": ".updateProximity()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L117",
+      "id": "audio_audiomanager_audiomanager_updateproximity",
+      "community": 0,
+      "norm_label": ".updateproximity()"
+    },
+    {
+      "label": ".createPad()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L125",
+      "id": "audio_audiomanager_audiomanager_createpad",
+      "community": 0,
+      "norm_label": ".createpad()"
+    },
+    {
+      "label": ".createLayer()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L154",
+      "id": "audio_audiomanager_audiomanager_createlayer",
+      "community": 0,
+      "norm_label": ".createlayer()"
+    },
+    {
+      "label": ".getPentatonicNote()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L187",
+      "id": "audio_audiomanager_audiomanager_getpentatonicnote",
+      "community": 0,
+      "norm_label": ".getpentatonicnote()"
+    },
+    {
+      "label": ".playDataClick()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L211",
+      "id": "audio_audiomanager_audiomanager_playdataclick",
+      "community": 0,
+      "norm_label": ".playdataclick()"
+    },
+    {
+      "label": ".playNote()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L255",
+      "id": "audio_audiomanager_audiomanager_playnote",
+      "community": 0,
+      "norm_label": ".playnote()"
+    },
+    {
+      "label": ".playErrorSound()",
+      "file_type": "code",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L277",
+      "id": "audio_audiomanager_audiomanager_playerrorsound",
+      "community": 0,
+      "norm_label": ".playerrorsound()"
+    },
+    {
+      "label": "GameConfig.js",
+      "file_type": "code",
+      "source_file": "src/core/GameConfig.js",
+      "source_location": "L1",
+      "id": "core_gameconfig",
+      "community": 7,
+      "norm_label": "gameconfig.js"
+    },
+    {
+      "label": "GameConfig",
+      "file_type": "code",
+      "source_file": "src/core/GameConfig.js",
+      "source_location": "L1",
+      "id": "core_gameconfig_gameconfig",
+      "community": 7,
+      "norm_label": "gameconfig"
+    },
+    {
+      "label": "StoryData.js",
+      "file_type": "code",
+      "source_file": "src/core/StoryData.js",
+      "source_location": "L1",
+      "id": "core_storydata",
+      "community": 6,
+      "norm_label": "storydata.js"
+    },
+    {
+      "label": "STORY_DATA",
+      "file_type": "code",
+      "source_file": "src/core/StoryData.js",
+      "source_location": "L1",
+      "id": "core_storydata_story_data",
+      "community": 6,
+      "norm_label": "story_data"
+    },
+    {
+      "label": "StoryGenerator.js",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L1",
+      "id": "core_storygenerator",
+      "community": 6,
+      "norm_label": "storygenerator.js"
+    },
+    {
+      "label": "StoryGenerator",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L5",
+      "id": "core_storygenerator_storygenerator",
+      "community": 6,
+      "norm_label": "storygenerator"
+    },
+    {
+      "label": ".generateSector()",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L6",
+      "id": "core_storygenerator_storygenerator_generatesector",
+      "community": 6,
+      "norm_label": ".generatesector()"
+    },
+    {
+      "label": ".getRandomPosition()",
+      "file_type": "code",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L127",
+      "id": "core_storygenerator_storygenerator_getrandomposition",
+      "community": 6,
+      "norm_label": ".getrandomposition()"
+    },
+    {
+      "label": "store.js",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": "L1",
+      "id": "core_store",
+      "community": 4,
+      "norm_label": "store.js"
+    },
+    {
+      "label": "loadState()",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": "L4",
+      "id": "core_store_loadstate",
+      "community": 4,
+      "norm_label": "loadstate()"
+    },
+    {
+      "label": "saveState()",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": "L16",
+      "id": "core_store_savestate",
+      "community": 4,
+      "norm_label": "savestate()"
+    },
+    {
+      "label": "useGameStore",
+      "file_type": "code",
+      "source_file": "src/core/store.js",
+      "source_location": "L24",
+      "id": "core_store_usegamestore",
+      "community": 4,
+      "norm_label": "usegamestore"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "id": "src_main",
+      "community": 9,
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "Assistant.jsx",
+      "file_type": "code",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": "L1",
+      "id": "ui_assistant",
+      "community": 4,
+      "norm_label": "assistant.jsx"
+    },
+    {
+      "label": "Assistant()",
+      "file_type": "code",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": "L10",
+      "id": "ui_assistant_assistant",
+      "community": 4,
+      "norm_label": "assistant()"
+    },
+    {
+      "label": "BootScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": "L1",
+      "id": "ui_bootscreen",
+      "community": 1,
+      "norm_label": "bootscreen.jsx"
+    },
+    {
+      "label": "BOOT_SEQUENCE",
+      "file_type": "code",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": "L4",
+      "id": "ui_bootscreen_boot_sequence",
+      "community": 1,
+      "norm_label": "boot_sequence"
+    },
+    {
+      "label": "BootScreen()",
+      "file_type": "code",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": "L18",
+      "id": "ui_bootscreen_bootscreen",
+      "community": 1,
+      "norm_label": "bootscreen()"
+    },
+    {
+      "label": "DataDriveTracker.jsx",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L1",
+      "id": "ui_datadrivetracker",
+      "community": 6,
+      "norm_label": "datadrivetracker.jsx"
+    },
+    {
+      "label": "DataDriveTracker()",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L6",
+      "id": "ui_datadrivetracker_datadrivetracker",
+      "community": 6,
+      "norm_label": "datadrivetracker()"
+    },
+    {
+      "label": "ManualOverlay.jsx",
+      "file_type": "code",
+      "source_file": "src/ui/ManualOverlay.jsx",
+      "source_location": "L1",
+      "id": "ui_manualoverlay",
+      "community": 1,
+      "norm_label": "manualoverlay.jsx"
+    },
+    {
+      "label": "Overlay.jsx",
+      "file_type": "code",
+      "source_file": "src/ui/Overlay.jsx",
+      "source_location": "L1",
+      "id": "ui_overlay",
+      "community": 1,
+      "norm_label": "overlay.jsx"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "id": "vite_config",
+      "community": 16,
+      "norm_label": "vite.config.js"
+    },
+    {
+      "label": "DataCluster",
+      "file_type": "code",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "3d_datacluster_datacluster",
+      "community": 8,
+      "norm_label": "datacluster"
+    },
+    {
+      "label": "DataPoint",
+      "file_type": "code",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "3d_datapoint_datapoint",
+      "community": 8,
+      "norm_label": "datapoint"
+    },
+    {
+      "label": "Scene",
+      "file_type": "code",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "3d_scene_scene",
+      "community": 8,
+      "norm_label": "scene"
+    },
+    {
+      "label": "ScreenFX",
+      "file_type": "code",
+      "source_file": "src/3d/ScreenFX.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "3d_screenfx_screenfx",
+      "community": 1,
+      "norm_label": "screenfx"
+    },
+    {
+      "label": "Algorithmic Layering",
+      "file_type": "rationale",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "audio_audiomanager_algorithmic_layering",
+      "community": 0,
+      "norm_label": "algorithmic layering"
+    },
+    {
+      "label": "WebGL Retro Pipeline",
+      "file_type": "rationale",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "3d_scene_retro_pipeline",
+      "community": 8,
+      "norm_label": "webgl retro pipeline"
+    },
+    {
+      "label": "Ghost Effect",
+      "file_type": "rationale",
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "src_voicemanager_ghost_effect",
+      "community": 10,
+      "norm_label": "ghost effect"
+    },
+    {
+      "label": "Overlay",
+      "file_type": "code",
+      "source_file": "src/ui/Overlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui_overlay_overlay",
+      "community": 1,
+      "norm_label": "overlay"
+    },
+    {
+      "label": "ManualOverlay",
+      "file_type": "code",
+      "source_file": "src/ui/ManualOverlay.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui_manualoverlay_manualoverlay",
+      "community": 1,
+      "norm_label": "manualoverlay"
+    },
+    {
+      "label": "handleReadLog",
+      "file_type": "code",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui_datadrivetracker_handlereadlog",
+      "community": 6,
+      "norm_label": "handlereadlog"
+    },
+    {
+      "label": "Root Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Bridge between 3D world and 2D UI via React state and refs without triggering unnecessary UI re-renders",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "architecture_root_layer",
+      "community": 14,
+      "norm_label": "root layer"
+    },
+    {
+      "label": "3D Engine Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Dedicated to WebGL canvas, rendered by GPU using Three.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "architecture_engine_layer",
+      "community": 11,
+      "norm_label": "3d engine layer"
+    },
+    {
+      "label": "2D User Interface Layer",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Traditional HTML/CSS layer on top of 3D canvas intercepting clicks only where visible UI elements are",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "architecture_ui_layer",
+      "community": 11,
+      "norm_label": "2d user interface layer"
+    },
+    {
+      "label": "Core Managers",
+      "file_type": "concept",
+      "source_file": "ARCHITECTURE.md",
+      "rationale": "Utility classes outside React lifecycle to ensure high performance",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "architecture_core_managers",
+      "community": 13,
+      "norm_label": "core managers"
+    },
+    {
+      "label": "Domain-Driven Architecture",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Strict directory structure to separate WebGL, DOM UI, audio, and core logic. Never mix 3D Canvas logic with DOM UI logic",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contributing_domain_architecture",
+      "community": 11,
+      "norm_label": "domain-driven architecture"
+    },
+    {
+      "label": "State Management",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Use Zustand global store, no React Context or prop-drilling. Prevent unnecessary re-renders",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contributing_state_management",
+      "community": 4,
+      "norm_label": "state management"
+    },
+    {
+      "label": "Performance & Memory Management",
+      "file_type": "concept",
+      "source_file": "CONTRIBUTING.md",
+      "rationale": "Avoid memory leaks. Dispose Geometry/Material, use declarative R3F. Track audio nodes. Pre-allocate vectors outside useFrame",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "contributing_performance",
+      "community": 12,
+      "norm_label": "performance & memory management"
+    },
+    {
+      "label": "Global State via Zustand",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "No prop-drilling or React Context. No local useState across WebGL/DOM boundary. Use src/core/store.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agent_instructions_global_state",
+      "community": 4,
+      "norm_label": "global state via zustand"
+    },
+    {
+      "label": "The WebGL / DOM Boundary",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "Communicate via zustand. Do not mount DOM elements deeply within 3D scene",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agent_instructions_webgl_dom_boundary",
+      "community": 11,
+      "norm_label": "the webgl / dom boundary"
+    },
+    {
+      "label": "Performance & Memory Strictness",
+      "file_type": "concept",
+      "source_file": ".agent-instructions.md",
+      "rationale": "Avoid imperative new THREE inside render loops. Garbage collect audio. Pre-allocate vectors outside useFrame loop",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agent_instructions_memory_strictness",
+      "community": 12,
+      "norm_label": "performance & memory strictness"
+    },
+    {
+      "label": "Audio Resonance Engine",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "rationale": "Bespoke Web Audio API synthesizer layering algorithmic dissonance and harmony based on depth",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_audio_resonance",
+      "community": 15,
+      "norm_label": "audio resonance engine"
+    },
+    {
+      "label": "Pages Deployment Workflow",
+      "file_type": "concept",
+      "source_file": ".github/workflows/deploy.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "workflows_deploy_deploy",
+      "community": 17,
+      "norm_label": "pages deployment workflow"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package",
+      "target": "package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_deploy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_predeploy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "package_scripts",
+      "target": "package_scripts_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_framer_motion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_postprocessing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_drei",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_fiber",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_three_postprocessing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_three",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_uuid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_zustand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_hooks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_refresh",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_gh_pages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitejs_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "3d_datacluster",
+      "target": "3d_datapoint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "3d_datacluster",
+      "target": "audio_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "3d_datacluster",
+      "target": "audio_audiomanager_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "3d_datacluster",
+      "target": "core_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "3d_datacluster",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "3d_datacluster",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "3d_datapoint_localtarget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "3d_datapoint_pointonray",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "3d_datapoint_targetscalevec",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "3d_datapoint_worldpos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "audio_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "audio_audiomanager_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "core_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "3d_datapoint",
+      "target": "core_gameconfig_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "3d_scene_camerarig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "audio_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "audio_audiomanager_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "core_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "core_storygenerator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "3d_scene",
+      "target": "core_storygenerator_storygenerator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "3d_scene",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_scene",
+      "target": "3d_scene_camerarig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "3d_screenfx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "3d_shard",
+      "target": "3d_shard_shard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/3d/Shard.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_shard_shard",
+      "target": "3d_datapoint_datapoint"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "audio_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "audio_audiomanager_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "core_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_getphosphorcolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "ui_assistant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "ui_bootscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "ui_datadrivetracker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "ui_manualoverlay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "ui_overlay",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "3d_scene_scene"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "3d_screenfx_screenfx"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "audio_audiomanager_audiomanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app",
+      "target": "src_app_getphosphorcolor"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "ui_assistant_assistant"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "ui_bootscreen_bootscreen"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "ui_datadrivetracker_datadrivetracker"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "ui_manualoverlay_manualoverlay"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "ui_overlay_overlay"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_errorboundary",
+      "target": "src_errorboundary_errorboundary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_main",
+      "target": "src_errorboundary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_errorboundary_errorboundary",
+      "target": "src_errorboundary_errorboundary_componentdidcatch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_errorboundary_errorboundary",
+      "target": "src_errorboundary_errorboundary_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_errorboundary_errorboundary",
+      "target": "src_errorboundary_errorboundary_getderivedstatefromerror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ErrorBoundary.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_errorboundary_errorboundary",
+      "target": "src_errorboundary_errorboundary_render",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "src_voicemanager",
+      "target": "src_voicemanager_voicemanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_voicemanager_ghost_effect",
+      "target": "src_voicemanager_voicemanager"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/VoiceManager.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "src_voicemanager_voicemanager",
+      "target": "audio_audiomanager_audiomanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_voicemanager_voicemanager",
+      "target": "src_voicemanager_voicemanager_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_voicemanager_voicemanager",
+      "target": "src_voicemanager_voicemanager_speak",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/VoiceManager.js",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_voicemanager_voicemanager",
+      "target": "src_voicemanager_voicemanager_stop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "audio_audiomanager",
+      "target": "audio_audiomanager_audiomanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "audio_audiomanager",
+      "target": "core_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "audio_audiomanager",
+      "target": "core_gameconfig_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_datacluster_datacluster",
+      "target": "audio_audiomanager_audiomanager"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_scene",
+      "target": "audio_audiomanager_audiomanager"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "audio_audiomanager_algorithmic_layering",
+      "target": "audio_audiomanager_audiomanager"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_cleardepthnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_createlayer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_createpad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_getpentatonicnote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_initialize",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_playdataclick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L277",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_playerrorsound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L255",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_playnote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_setvolume",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_updatedepth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "audio_audiomanager_audiomanager_updateproximity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager",
+      "target": "core_gameconfig_gameconfig"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_initialize",
+      "target": "audio_audiomanager_audiomanager_createlayer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_initialize",
+      "target": "audio_audiomanager_audiomanager_createpad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_updatedepth",
+      "target": "audio_audiomanager_audiomanager_cleardepthnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_updatedepth",
+      "target": "audio_audiomanager_audiomanager_createlayer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_updatedepth",
+      "target": "audio_audiomanager_audiomanager_createpad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_playdataclick",
+      "target": "audio_audiomanager_audiomanager_getpentatonicnote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/audio/AudioManager.js",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "audio_audiomanager_audiomanager_playdataclick",
+      "target": "audio_audiomanager_audiomanager_playnote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/GameConfig.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "core_gameconfig",
+      "target": "core_gameconfig_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "core_storygenerator",
+      "target": "core_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_datapoint_datapoint",
+      "target": "core_gameconfig_gameconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "core_storygenerator",
+      "target": "core_gameconfig_gameconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_gameconfig_gameconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryData.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "core_storydata",
+      "target": "core_storydata_story_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "core_storygenerator",
+      "target": "core_storydata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_storydata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "core_storygenerator",
+      "target": "core_storydata_story_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_storydata_story_data"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_storydata_story_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "core_storydata_story_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "core_storygenerator",
+      "target": "core_storygenerator_storygenerator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_storygenerator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_scene",
+      "target": "core_storygenerator_storygenerator"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_storygenerator_storygenerator_generatesector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "core_storygenerator_storygenerator",
+      "target": "core_storygenerator_storygenerator_getrandomposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_storygenerator_storygenerator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ui_datadrivetracker_handlereadlog",
+      "target": "core_storygenerator_storygenerator"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/StoryGenerator.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "core_storygenerator_storygenerator_generatesector",
+      "target": "core_storygenerator_storygenerator_getrandomposition",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/store.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "core_store",
+      "target": "core_store_loadstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/store.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "core_store",
+      "target": "core_store_savestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/core/store.js",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "core_store",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "ui_assistant",
+      "target": "core_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_store",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "core_store_usegamestore",
+      "target": "core_store_loadstate"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "core_store_usegamestore",
+      "target": "core_store_savestate"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/DataCluster.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_datacluster_datacluster",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_scene",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".agent-instructions.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "agent_instructions_global_state",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_state_management",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "ui_assistant",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ui_assistant_assistant",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "core_store_usegamestore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "core_store_usegamestore"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/Assistant.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_assistant",
+      "target": "ui_assistant_assistant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "ui_bootscreen",
+      "target": "ui_bootscreen_boot_sequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/BootScreen.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "ui_bootscreen",
+      "target": "ui_bootscreen_bootscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_datadrivetracker",
+      "target": "ui_datadrivetracker_datadrivetracker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/ui/DataDriveTracker.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ui_datadrivetracker_datadrivetracker",
+      "target": "ui_datadrivetracker_handlereadlog"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/3d/DataPoint.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_datapoint_datapoint",
+      "target": "3d_datacluster_datacluster"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_scene",
+      "target": "3d_datacluster_datacluster"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/3d/Scene.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "3d_scene_retro_pipeline",
+      "target": "3d_scene_scene"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_domain_architecture",
+      "target": "architecture_engine_layer"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_domain_architecture",
+      "target": "architecture_ui_layer"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_domain_architecture",
+      "target": "agent_instructions_webgl_dom_boundary"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_state_management",
+      "target": "agent_instructions_global_state"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "contributing_performance",
+      "target": "agent_instructions_memory_strictness"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "state_persistence_system",
+      "label": "State Persistence System",
+      "nodes": [
+        "core_store_usegamestore",
+        "core_store_loadstate",
+        "core_store_savestate"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/store.js"
+    },
+    {
+      "id": "audio_voice_subsystem",
+      "label": "Audio & Voice Subsystem",
+      "nodes": [
+        "audio_audiomanager_audiomanager",
+        "src_voicemanager_voicemanager"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/audio/AudioManager.js"
+    },
+    {
+      "id": "story_generation_engine",
+      "label": "Story Generation Engine",
+      "nodes": [
+        "core_storygenerator_storygenerator",
+        "core_storydata_story_data",
+        "core_gameconfig_gameconfig"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/core/StoryGenerator.js"
+    },
+    {
+      "id": "architecture_layers",
+      "label": "Radial Stream Architecture Layers",
+      "nodes": [
+        "architecture_root_layer",
+        "architecture_engine_layer",
+        "architecture_ui_layer",
+        "architecture_core_managers"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ARCHITECTURE.md"
+    },
+    {
+      "id": "strict_separation_rules",
+      "label": "Strict Domain Separation Rules",
+      "nodes": [
+        "contributing_domain_architecture",
+        "agent_instructions_webgl_dom_boundary",
+        "architecture_engine_layer",
+        "architecture_ui_layer"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CONTRIBUTING.md"
+    }
+  ],
+  "built_at_commit": "326c72f445e9949697c9c29f5031df2336f9781e"
+}

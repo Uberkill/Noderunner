@@ -16,14 +16,8 @@ export default React.memo(function Overlay({ data, onClose, onWarp }) {
                 setProgress(100);
                 setDecrypted(true);
                 
-                // Auto-close standard lore fragments after 5 seconds
-                const closeTimer = setTimeout(() => {
-                    onClose();
-                }, 5000);
-
-                return () => {
-                    clearTimeout(closeTimer);
-                };
+                // Lore fragments now stay open until manually closed
+                return;
             }
 
             // Decryption Sequence for Key Node

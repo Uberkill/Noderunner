@@ -1,11 +1,11 @@
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
 import DataPoint from './DataPoint';
-import { Line } from '@react-three/drei';
-import { audioManager } from './AudioManager';
+import { audioManager } from '../audio/AudioManager';
+import { useGameStore } from '../core/store';
 
-export default React.memo(function DataCluster({ sectorData, onSelect, onHover, phosphorColor, onComboEvent, onProgressUpdate }) {
+export default React.memo(function DataCluster({ sectorData, onSelect, onHover, phosphorColor }) {
+    const { setComboCount, setMappingProgress } = useGameStore();
     const [selectedId, setSelectedId] = useState(null);
     const [capturedNodes, setCapturedNodes] = useState(new Set([sectorData.startNodeId]));
     const [activeEdges, setActiveEdges] = useState([]); // array of {sIdx, eIdx}
@@ -18,10 +18,15 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
     }, [points]);
 
     useEffect(() => {
-        if (onProgressUpdate) {
-            onProgressUpdate(capturedNodes.size, totalSafeNodes);
+        setMappingProgress({ captured: capturedNodes.size, total: totalSafeNodes });
+        if (capturedNodes.size === totalSafeNodes && totalSafeNodes > 0 && !useGameStore.getState().has100Percent) {
+            useGameStore.getState().setHas100Percent(true);
+            useGameStore.getState().setLastHint("DIAG_LOG: SECTOR TRACE 100% [ BONUS DATA UNLOCKED ]");
+            audioManager.playNote(880, 0);
+            audioManager.playNote(1046, 0.2);
+            audioManager.playNote(1318, 0.4);
         }
-    }, [capturedNodes.size, totalSafeNodes, onProgressUpdate]);
+    }, [capturedNodes.size, totalSafeNodes, setMappingProgress]);
     
     // We keep nodePositions for local use if needed, though with Drei Line we can just use points
     const nodePositions = useRef(new Float32Array(points.length * 3));
@@ -51,7 +56,7 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
         if (data.type === 'hazard') {
             audioManager.playErrorSound();
             
-            if (onComboEvent) onComboEvent('break');
+            setComboCount(0);
 
             const numToBreak = Math.floor(Math.random() * 3) + 2; // Break 2 to 4 connections
             
@@ -60,14 +65,16 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
                 const newEdges = [...prevEdges];
                 const removedEdges = newEdges.splice(-numToBreak, numToBreak);
                 
-                setCapturedNodes(prevNodes => {
-                    const newNodes = new Set(prevNodes);
-                    removedEdges.forEach(edge => {
-                        const nodeId = points[edge.eIdx].id;
-                        newNodes.delete(nodeId);
+                setTimeout(() => {
+                    setCapturedNodes(prevNodes => {
+                        const newNodes = new Set(prevNodes);
+                        removedEdges.forEach(edge => {
+                            const nodeId = points[edge.eIdx].id;
+                            newNodes.delete(nodeId);
+                        });
+                        return newNodes;
                     });
-                    return newNodes;
-                });
+                }, 0);
                 
                 return newEdges;
             });
@@ -94,7 +101,7 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
             setCapturedNodes(prev => new Set([...prev, data.id]));
             setActiveEdges(prev => [...prev, { sIdx: closestNodeIdx, eIdx: data.index }]);
             setSelectedId(data.id);
-            if (onComboEvent) onComboEvent('hit');
+            setComboCount(c => c + 1);
             onSelect(data); // Snap camera only on successful connect
         }
     };
@@ -107,17 +114,29 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
     }, []);
 
     // Construct the geometry for the connected lines
-    const lineGeo = useMemo(() => {
+    const linePositions = useMemo(() => {
         if (activeEdges.length === 0) return null;
-        const positions = new Float32Array(activeEdges.flatMap(edge => {
-            const p1 = points[edge.sIdx].position;
-            const p2 = points[edge.eIdx].position;
-            return [...p1, ...p2];
-        }));
-        const geo = new THREE.BufferGeometry();
-        geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        return geo;
-    }, [activeEdges, points]);
+        return new Float32Array(activeEdges.length * 6);
+    }, [activeEdges.length]);
+
+    const geoRef = useRef();
+
+    useFrame(() => {
+        if (geoRef.current && activeEdges.length > 0) {
+            const positions = geoRef.current.attributes.position.array;
+            for (let i = 0; i < activeEdges.length; i++) {
+                const sIdx = activeEdges[i].sIdx;
+                const eIdx = activeEdges[i].eIdx;
+                positions[i * 6] = nodePositions.current[sIdx * 3];
+                positions[i * 6 + 1] = nodePositions.current[sIdx * 3 + 1];
+                positions[i * 6 + 2] = nodePositions.current[sIdx * 3 + 2];
+                positions[i * 6 + 3] = nodePositions.current[eIdx * 3];
+                positions[i * 6 + 4] = nodePositions.current[eIdx * 3 + 1];
+                positions[i * 6 + 5] = nodePositions.current[eIdx * 3 + 2];
+            }
+            geoRef.current.attributes.position.needsUpdate = true;
+        }
+    });
 
     return (
         <group>
@@ -157,8 +176,16 @@ export default React.memo(function DataCluster({ sectorData, onSelect, onHover, 
             })}
 
             {/* DYNAMIC COLORED LINES RENDERER USING NATIVE lineSegments */}
-            {lineGeo && (
-                <lineSegments geometry={lineGeo}>
+            {linePositions && (
+                <lineSegments>
+                    <bufferGeometry ref={geoRef} key={activeEdges.length}>
+                        <bufferAttribute
+                            attach="attributes-position"
+                            count={linePositions.length / 3}
+                            array={linePositions}
+                            itemSize={3}
+                        />
+                    </bufferGeometry>
                     <lineBasicMaterial attach="material" color={phosphorColor} transparent opacity={0.8} />
                 </lineSegments>
             )}

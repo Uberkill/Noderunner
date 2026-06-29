@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
-import { STORY_DATA } from '../../StoryData';
+import { STORY_DATA } from '../core/StoryData';
+import { useGameStore } from '../core/store';
+import { storyGenerator } from '../core/StoryGenerator';
 
-export default React.memo(function DataDriveTracker({ depth, collectedFragments, unlockedArchives, onReadLog }) {
+export default function DataDriveTracker() {
+    const { depth, collectedFragments, unlockedArchives, setActiveData } = useGameStore();
     const [journalOpen, setJournalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState(1);
     
+    const handleReadLog = (logData) => {
+        if (logData.isArchive) {
+            useGameStore.getState().addArchive(depth);
+        }
+        setActiveData({
+            type: 'corrupted',
+            title: logData.title,
+            description: logData.description
+        });
+    };
+
     // Determine which stage we're on (cap at 5)
     const stageDepth = Math.min(depth, 5);
     const stageData = STORY_DATA[stageDepth];
@@ -49,7 +63,7 @@ export default React.memo(function DataDriveTracker({ depth, collectedFragments,
 
                 {isStageComplete && !unlockedArchives.has(stageDepth) && (
                     <button 
-                        onClick={() => onReadLog({ title: stageData.archive.title, description: stageData.archive.text, isArchive: true })}
+                        onClick={() => handleReadLog({ title: stageData.archive.title, description: stageData.archive.text, isArchive: true })}
                         className="inverted-block breathing-glow text-sm"
                         style={{ 
                             padding: '2px 10px', 
@@ -200,7 +214,11 @@ export default React.memo(function DataDriveTracker({ depth, collectedFragments,
                                             background: layerArchiveUnlocked ? 'rgba(0,255,255,0.1)' : 'transparent' 
                                         }}>
                                             {layerArchiveUnlocked ? (
-                                                <>
+                                                <div 
+                                                    onClick={() => handleReadLog(storyGenerator.generateLoreLog(activeTab))}
+                                                    onMouseEnter={(e) => e.target.style.background = 'rgba(0,255,0,0.1)'}
+                                                    onMouseLeave={(e) => e.target.style.background = 'transparent'}
+                                                >
                                                     <strong className="text-lg" style={{ display: 'block', marginBottom: '20px', fontFamily: 'monospace' }}>
                                                         {layerData.archive.title}
                                                     </strong>
@@ -216,7 +234,7 @@ export default React.memo(function DataDriveTracker({ depth, collectedFragments,
                                                             <p key={i} style={{ marginBottom: '15px' }}>{para}</p>
                                                         ))}
                                                     </div>
-                                                </>
+                                                </div>
                                             ) : (
                                                 <div style={{ opacity: 0.4, textAlign: 'center', padding: '40px 0', fontFamily: 'monospace' }}>
                                                     [ DECRYPTION PENDING: {fragsInLayer.length}/5 FRAGMENTS RECOVERED ]
@@ -232,4 +250,4 @@ export default React.memo(function DataDriveTracker({ depth, collectedFragments,
             )}
         </>
     );
-});
+}

@@ -25,8 +25,8 @@ export default function DataDriveTracker() {
 
     // Determine how many we've collected in this stage
     const stageFrags = stageData.fragments;
-    const collectedInStage = stageFrags.filter(f => collectedFragments.has(f.id));
-    const isStageComplete = collectedInStage.length === 5 || unlockedArchives.has(stageDepth);
+    const collectedInStage = stageFrags.filter(f => collectedFragments.includes(f.id));
+    const isStageComplete = collectedInStage.length === 5 || unlockedArchives.includes(stageDepth);
 
     return (
         <>
@@ -45,7 +45,7 @@ export default function DataDriveTracker() {
                 {/* Horizontal Progress Blocks */}
                 <div style={{ display: 'flex', gap: '5px' }}>
                     {stageFrags.map((frag, idx) => {
-                        const isCollected = collectedFragments.has(frag.id);
+                        const isCollected = collectedFragments.includes(frag.id);
                         return (
                             <div 
                                 key={frag.id}
@@ -61,7 +61,7 @@ export default function DataDriveTracker() {
                     })}
                 </div>
 
-                {isStageComplete && !unlockedArchives.has(stageDepth) && (
+                {isStageComplete && !unlockedArchives.includes(stageDepth) && (
                     <button 
                         onClick={() => handleReadLog({ title: stageData.archive.title, description: stageData.archive.text, isArchive: true })}
                         className="inverted-block breathing-glow text-sm"
@@ -81,7 +81,7 @@ export default function DataDriveTracker() {
                 <div style={{ flex: 1 }}></div>
 
                 <div className="text-xs" style={{ color: 'var(--color-phosphor)', opacity: 0.8 }}>
-                    {collectedFragments.size} / 25
+                    {collectedFragments.length} / 25
                 </div>
 
                 <button 
@@ -166,8 +166,8 @@ export default function DataDriveTracker() {
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '30px' }}>
                         {(() => {
                             const layerData = STORY_DATA[activeTab];
-                            const layerArchiveUnlocked = unlockedArchives.has(activeTab);
-                            const fragsInLayer = layerData.fragments.filter(f => collectedFragments.has(f.id));
+                            const layerArchiveUnlocked = unlockedArchives.includes(activeTab);
+                            const fragsInLayer = layerData.fragments.filter(f => collectedFragments.includes(f.id));
 
                             return (
                                 <>
@@ -176,7 +176,7 @@ export default function DataDriveTracker() {
                                         <h3 style={{ borderBottom: '1px solid var(--color-phosphor)', paddingBottom: '10px', marginBottom: '20px' }}>DATA SECTORS [{fragsInLayer.length}/5]</h3>
                                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '15px' }}>
                                             {layerData.fragments.map((frag, idx) => {
-                                                const hasIt = collectedFragments.has(frag.id);
+                                                const hasIt = collectedFragments.includes(frag.id);
                                                 return (
                                                     <div key={frag.id} style={{ 
                                                         border: `1px solid ${hasIt ? 'var(--color-phosphor)' : 'rgba(0,255,255,0.2)'}`, 

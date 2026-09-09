@@ -2,7 +2,7 @@
 
 A highly immersive, story-driven 3D web experience built with React Three Fiber, Three.js, and Zustand. In **Radial Stream**, players act as system technicians navigating the corrupted architecture of "O-NET," attempting to rebuild shattered data fragments by tracing 3D node constellations across varying depths of the system.
 
-## 🚀 Features
+##  Features
 
 - **Immersive 3D Navigation:** Interactive 3D data clusters mapped in real-time. Physics-based cursor magnetism and dynamic edge generation.
 - **Deep Narrative Lore:** Uncover the cryptic history of the INGRAM MAINFRAME through corrupted data logs and environmental storytelling.
@@ -10,7 +10,7 @@ A highly immersive, story-driven 3D web experience built with React Three Fiber,
 - **Audio Resonance Engine:** Bespoke Web Audio API synthesizer that layers algorithmic dissonance and harmony based on sector depth and interaction.
 - **Retro-Futuristic Aesthetics:** Post-processing stack featuring volumetric bloom, chromatic aberration, and algorithmic glitch effects.
 
-## 📂 Architecture
+##  Architecture
 
 The codebase is built for scalability, strictly separating domains:
 
@@ -19,7 +19,7 @@ The codebase is built for scalability, strictly separating domains:
 - `src/audio/`: Synthesizer algorithms and the core audio context manager (`AudioManager.js`)
 - `src/core/`: Global state management, narrative generation, and configuration (`store.js`, `GameConfig.js`, `StoryGenerator.js`)
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 1. **Clone the repository** (if applicable) or navigate to the project directory.
 2. **Install dependencies:**
@@ -36,10 +36,10 @@ The codebase is built for scalability, strictly separating domains:
    npm run build
    ```
 
-## 🧠 State Management
+##  State Management
 
 Global state is handled seamlessly via **Zustand** (`src/core/store.js`). Components only subscribe to the specific slices of state they need, entirely eliminating prop-drilling and preventing unnecessary WebGL re-renders.
 
-## 🤝 Contributing
+##  Contributing
 
 If you wish to expand the lore, introduce new mechanics, or optimize the WebGL pipeline, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) and the [.agent-instructions.md](./.agent-instructions.md) files to understand our design patterns and workflow requirements.

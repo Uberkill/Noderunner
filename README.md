@@ -1,45 +1,44 @@
 # Radial Stream (O-NET DIAG_MODE)
 
-A highly immersive, story-driven 3D web experience built with React Three Fiber, Three.js, and Zustand. In **Radial Stream**, players act as system technicians navigating the corrupted architecture of "O-NET," attempting to rebuild shattered data fragments by tracing 3D node constellations across varying depths of the system.
+An interactive 3D web experience built with React Three Fiber, Three.js, Web Audio API, and Zustand. Players trace and reconstruct 3D node constellations across sector depths, uncovering system telemetry through environmental narrative logs.
 
-##  Features
+---
 
-- **Immersive 3D Navigation:** Interactive 3D data clusters mapped in real-time. Physics-based cursor magnetism and dynamic edge generation.
-- **Deep Narrative Lore:** Uncover the cryptic history of the INGRAM MAINFRAME through corrupted data logs and environmental storytelling.
-- **Procedural Depth Generation:** Mathematically scaled difficulty, node density, and audio resonance as you traverse deeper into the system.
-- **Audio Resonance Engine:** Bespoke Web Audio API synthesizer that layers algorithmic dissonance and harmony based on sector depth and interaction.
-- **Retro-Futuristic Aesthetics:** Post-processing stack featuring volumetric bloom, chromatic aberration, and algorithmic glitch effects.
+## Technical Features
 
-##  Architecture
+- **Interactive 3D Constellations:** Dynamic 3D data clusters rendered in WebGL with raycasted cursor interaction and procedural edge generation.
+- **Procedural Depth Scaling:** Algorithmic calculation of node density, navigation thresholds, and visual complexity based on sector progression.
+- **Procedural Web Audio Synthesis:** Custom Web Audio API synthesizer that layers interactive algorithmic audio cues based on sector depth and interaction states.
+- **Post-Processing Pipeline:** Custom visual shaders featuring bloom, chromatic aberration, and noise passes via `@react-three/postprocessing`.
+- **Domain-Driven Architecture:** Clean isolation between 3D canvas rendering (`src/3d/`), DOM HUD overlays (`src/ui/`), audio engine (`src/audio/`), and state management (`src/core/`).
 
-The codebase is built for scalability, strictly separating domains:
+---
 
-- `src/3d/`: WebGL, rendering logic, physical node states (`Scene.jsx`, `DataCluster.jsx`, `DataPoint.jsx`)
-- `src/ui/`: DOM-based overlays, HUD elements, and menus (`Overlay.jsx`, `BootScreen.jsx`, `Assistant.jsx`)
-- `src/audio/`: Synthesizer algorithms and the core audio context manager (`AudioManager.js`)
-- `src/core/`: Global state management, narrative generation, and configuration (`store.js`, `GameConfig.js`, `StoryGenerator.js`)
+## Architecture
 
-##  Installation & Setup
+- `src/3d/`: WebGL scenes, node clusters, shaders, and camera controllers (`Scene.jsx`, `DataCluster.jsx`, `DataPoint.jsx`)
+- `src/ui/`: Monospace DOM overlays, HUD telemetry, and modal dialogues (`Overlay.jsx`, `BootScreen.jsx`, `Assistant.jsx`)
+- `src/audio/`: Algorithmic audio context and node lifecycle managers (`AudioManager.js`)
+- `src/core/`: Zustand state store, configuration parameters, and procedural log generators (`store.js`, `GameConfig.js`)
 
-1. **Clone the repository** (if applicable) or navigate to the project directory.
-2. **Install dependencies:**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
-   *(Note: `--legacy-peer-deps` is required due to React Three Drei and Postprocessing dependency graphs.)*
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+---
 
-##  State Management
+## Getting Started
 
-Global state is handled seamlessly via **Zustand** (`src/core/store.js`). Components only subscribe to the specific slices of state they need, entirely eliminating prop-drilling and preventing unnecessary WebGL re-renders.
+### Installation
+```bash
+npm install --legacy-peer-deps
+```
+*(Note: `--legacy-peer-deps` aligns React Three Fiber and Three.js peer dependency graphs.)*
 
-##  Contributing
+### Development & Build
+```bash
+npm run dev      # Start Vite development server
+npm run build    # Compile production bundle
+```
 
-If you wish to expand the lore, introduce new mechanics, or optimize the WebGL pipeline, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) and the [.agent-instructions.md](./.agent-instructions.md) files to understand our design patterns and workflow requirements.
+---
+
+## Contributing
+
+Review [CONTRIBUTING.md](./CONTRIBUTING.md) for architectural boundaries, memory disposal practices, and rendering conventions.

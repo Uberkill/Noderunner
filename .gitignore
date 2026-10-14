@@ -9,3 +9,4 @@ dist/
 .agents/
 graphify-out/
 test-results/
+*.bat
